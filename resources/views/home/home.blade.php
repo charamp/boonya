@@ -12,6 +12,11 @@
 					    <a href="#!" class="collection-item">พระกรุเนื้อดิน</a>
 					    <a href="#!" class="collection-item">พระกรุเนื้อชิน</a>
 					    <a href="#!" class="collection-item">เหรียญปั้มก่อนปี 2535</a>
+					    <a href="#!" class="collection-item">เหรียญปั้มหลังปี 2535</a>
+					    <a href="#!" class="collection-item">พระกริ่ง</a>
+					    <a href="#!" class="collection-item">พระหล่อ</a>
+					    <a href="#!" class="collection-item">พระบูชา</a>
+					    <a href="#!" class="collection-item">พระปิดตา</a>
 					</div>
 				</div>
 			</div>
