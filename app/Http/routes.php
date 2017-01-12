@@ -24,3 +24,5 @@ Route::get('/manage', 'AdminController@LoginPage');
 Route::get('/manage/addamulet', 'AdminController@AddAmuletPage');
 
 Route::get('/manage/amuletlist', 'AdminController@AmuletListPage');
+
+Route::post('/manage/doaddamulet', 'AdminController@DoAddAmulet');
