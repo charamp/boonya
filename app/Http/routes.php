@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'HomeController@Homepage');
+
+Route::get('/amulet', 'AmuletController@Amuletlist');
+
+Route::get('/amulet/{id}', 'AmuletController@Show');

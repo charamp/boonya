@@ -11,7 +11,7 @@
 	<body>
 		<div class="navbar-fixed">
 			<nav>
-				<div class='nav-wrapper blue lighten-1'>
+				<div class='nav-wrapper teal lighten-2'>
 					<a href='#' class='brand-logo'>Logo</a>
 					<ul id='nav-mobile' class='right hide-on-med-and-down'>
 						<li><a href='/'>หน้าหลัก</a></li>
@@ -44,10 +44,11 @@
 			@yield('amulet.amuletlist')
 			@yield('management.howtobuy')
 			@yield('management.contac')
+			@yield('admin.addamulet')
 
 		</div>
 
-		<footer class="page-footer blue lighten-1">
+		<footer class="page-footer teal lighten-2">
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">

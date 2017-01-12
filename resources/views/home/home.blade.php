@@ -2,9 +2,22 @@
 
 @section('home.home')
 
-	<div class='row card'>
-		<div class='col s12'>
-
+	<div class='row'>
+		<div class='col s3'>
+			<p>หมวดหมู่พระเครื่อง</p>
+			<div class='row'>
+				<div class='col s12'>
+					<div class="collection">
+					    <a href="#!" class="collection-item active">ทั้งหมด</a>
+					    <a href="#!" class="collection-item">พระกรุเนื้อดิน</a>
+					    <a href="#!" class="collection-item">พระกรุเนื้อชิน</a>
+					    <a href="#!" class="collection-item">เหรียญปั้มก่อนปี 2535</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class='col s9'>
+			<p>หมวดหมู่พระเครื่อง</p>
 			<div class='row'>
 				<div class='col s3'>
 					<a href='#'>
