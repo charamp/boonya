@@ -44,7 +44,10 @@
 			@yield('amulet.amuletlist')
 			@yield('management.howtobuy')
 			@yield('management.contac')
+
+			@yield('admin.login')
 			@yield('admin.addamulet')
+			@yield('admin.amuletlist')
 
 		</div>
 

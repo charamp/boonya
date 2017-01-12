@@ -8,7 +8,16 @@ use App\Http\Requests;
 
 class AdminController extends Controller
 {
-    public function AddAmulet(){
+	public function LoginPage() {
+		$page = 'admin';
+		return View::make('admin.login');
+	}
+    public function AddAmuletPage() {
+    	$page = 'admin';
     	return View::make('admin.addamulet');
+    }
+    public function AmuletListPage() {
+    	$page = 'admin';
+    	return View::make('admin.amuletlist');
     }
 }

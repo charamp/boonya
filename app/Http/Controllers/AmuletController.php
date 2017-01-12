@@ -6,13 +6,15 @@ use View;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+use App\AmuletList;
+
 class AmuletController extends Controller
 {
     public function Amuletlist() {
     	return View::make('amulet.amuletlist');
     }
 
-    public function Show($amulet_id){
+    public function Show(Request $request){
     	# query amulet
     	$result = array();
     	$result['amulet_id'] = 1;
@@ -22,5 +24,10 @@ class AmuletController extends Controller
     	$result['amulet_status'] = 'พร้อมเช่า';
     	$result['amulet_image'] = ['http://localhost:8000/img/test.jpg'];
     	return View::make('amulet.show')->with('result', $result);
+    }
+
+    public function Load(Request $request){
+        $result = AmuletList::get();
+        return response()->json($result);
     }
 }
