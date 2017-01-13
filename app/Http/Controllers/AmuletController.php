@@ -14,7 +14,7 @@ class AmuletController extends Controller
     	return View::make('amulet.amuletlist');
     }
 
-    public function Show(Request $request){
+    public function Show($amulet_id){
     	# query amulet
     	$result = array();
     	$result['amulet_id'] = 1;

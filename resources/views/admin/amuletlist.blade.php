@@ -1,21 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.manage')
 
 @section('admin.amuletlist')
 
-	<div class='row'>
-		<div class='col s3'>
-			<p>รายการจัดการ</p>
-			<div class='row'>
-				<div class='col s12'>
-					<div class="collection">
-					    <a href="/manage/amuletlist" class="collection-item active">รายการพระเครื่อง</a>
-					    <a href="/manage/addamulet" class="collection-item">เพิ่มพระเครื่อง</a>
-					    <a href="/amulet" class="collection-item">ค้นหาพระเครื่อง</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class='col s9'>
 			<p>พระเครื่องทั้งหมด</p>
 			<div class='row'>
 				<div class='col s3'>
@@ -105,8 +91,7 @@
 				</div>
 
 			</div>
-		</div>
-	</div>
+
 
 
 @stop
