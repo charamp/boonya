@@ -2,7 +2,6 @@
 
 @section('admin.addamulet')
 
-
 		<div class='row'>
 			<div class='col s12'>
 				<div class='row'>
@@ -40,9 +39,9 @@
 					        </div>
 					        <div class="input-field col s6">
 							    <select name="amulet_status[]">
-							      	<option value="1" selected>พร้อมเช่า</option>
-							      	<option value="2">เช่าแล้ว</option>
-							      	<option value="3์">พระโชว์</option>
+							      	<option value="พร้อมเช่า" selected>พร้อมเช่า</option>
+							      	<option value="เช่าแล้ว">เช่าแล้ว</option>
+							      	<option value="พระโชว์">พระโชว์</option>
 							    </select>
 							    <label>สถานะพระเครื่อง</label>
 							</div>

@@ -54,7 +54,7 @@
 					</div>
 				</div>
 				<div class='col s9'>
-				
+
 					@yield('admin.login')
 					@yield('admin.addamulet')
 					@yield('admin.amuletlist')

@@ -16,15 +16,15 @@ class AdminController extends Controller
 {
 	public function LoginPage() {
 		$page = 'admin';
-		return View::make('admin.login');
+		return View::make('admin.login')->with('page', $page);
 	}
     public function AddAmuletPage() {
     	$page = 'admin';
-    	return View::make('admin.addamulet');
+    	return View::make('admin.addamulet')->with('page', $page);;
     }
     public function AmuletListPage() {
     	$page = 'admin';
-    	return View::make('admin.amuletlist');
+    	return View::make('admin.amuletlist')->with('page', $page);;
     }
     public function ShowAmuletPage($amulet_id) {
 
@@ -50,17 +50,24 @@ class AdminController extends Controller
 	    }
 
         $random_number = (string)rand(pow(10,2), pow(10,4)-1);
+        $amulet_id = 'BID-' . time() . $random_number;
         $amulet = new AmuletList();
-        $amulet['amulet_id'] = 'BID-' . time() . $random_number;
+        $amulet['amulet_id'] = $amulet_id;
         $amulet['amulet_name'] = $request['amulet_name'];
         $amulet['amulet_description'] = $request['amulet_description'];
         $amulet['amulet_price'] = (int)$request['amulet_price'];
         $amulet['amulet_status'] = $request['amulet_status'][0];
         $amulet['amulet_author'] = $request['amulet_author'];
-
-
-
         $amulet->save();
+
+        foreach($image_list as $image_name) {
+            $image = new AmuletImage();
+            $image['image_id'] = 'IID-' . explode('.', $image_name)[0];
+            $image['image_url'] = $image_name;
+            $image['amulet_id'] = $amulet_id;
+            $image->save();
+        }
+
 
         $url = '/manage/showamulet/' . $amulet['amulet_id'];
     	return Redirect::to($url);
