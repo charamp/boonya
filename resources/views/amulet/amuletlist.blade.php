@@ -20,59 +20,29 @@
 				</div>
 			</div>
 
-			<div class='row filter-card center-align'>
-				<div class='col s3 left-align'>
+			<?php $i = 0; ?>
+			@foreach($category_list as $category)
+				@if($i%4==0)
+					<div class='row filter-card center-align'>
+				@endif
+ 
+					<div class='col s3 left-align'>
 
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box" />
-					<label for="filled-in-box">พระสมเด็จ</label>
+						<input type="checkbox" name="amulet_category[]" value="{{ $category['CATEGORY_ID'] }}" class="filled-in" id="{{ $category['CATEGORY_ID'] }}" />
+					    <label for="{{ $category['CATEGORY_ID'] }}">{{ $category['CATEGORY_NAME'] }}</label>
 
-				</div>
-				<div class='col s3 left-align'>
+					</div>
 
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box2"/>
-					<label for="filled-in-box2">พระเหรียญก่อนปี 2535</label>
+				<?php $i++; ?>
+				@if($i==count($category_list))
+				    </div>
+				@endif
+				@if($i%4==0)
+				    </div>
+				@endif
+			@endforeach
 
-				</div>
-				<div class='col s3 left-align'>
-
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box3" />
-					<label for="filled-in-box3">พระเหรียญหลังปี 2535</label>
-
-				</div>
-				<div class='col s3 left-align'>
-
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box4" />
-					<label for="filled-in-box4">เครื่องราง</label>
-
-				</div>
-			</div>
-
-			<div class='row filter-card center-align'>
-				<div class='col s3 left-align'>
-
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box5" />
-					<label for="filled-in-box5">พระเนื้อดิน</label>
-
-				</div>
-				<div class='col s3 left-align'>
-
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box6" />
-					<label for="filled-in-box6">พระเนื้อชิน</label>
-
-				</div>
-				<div class='col s3 left-align'>
-
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box7" />
-					<label for="filled-in-box7">ธนบัตร เหรียญ</label>
-
-				</div>
-				<div class='col s3 left-align'>
-
-					<input type="checkbox" class="filled-in checkbox-blue" id="filled-in-box8" />
-					<label for="filled-in-box8">เบ็ดเตล็ด</label>
-
-				</div>
-			</div>
+			
 
 			<div class='row'>
 				<div class='col s12 center-align'>

@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\AmuletList;
+use App\CategoryList;
 
 class AmuletController extends Controller
 {
     public function Amuletlist() {
-    	return View::make('amulet.amuletlist');
+        $category_list = CategoryList::all();
+    	return View::make('amulet.amuletlist')->with('category_list', $category_list);
     }
 
     public function Show($amulet_id){

@@ -48,24 +48,24 @@
 				      	</div>
 				      	<div class='row'>
 				      		<div class='col s12'>
-				      			<div class='row'>
-				      				<div class='col s3'>
-				      					<input type="checkbox" name="amulet_category[]" class="filled-in" id="filled-in-box" />
-				      					<label for="filled-in-box">พระกรุเนื้อดิน</label>
-				      				</div>
-				      				<div class='col s3'>
-				      					<input type="checkbox" name="amulet_category[]" class="filled-in" id="filled-in-box2" />
-				      					<label for="filled-in-box2">เหรียญปั้มก่อนปี 2535</label>
-				      				</div>
-				      				<div class='col s3'>
-				      					<input type="checkbox" name="amulet_category[]" class="filled-in" id="filled-in-box3" />
-				      					<label for="filled-in-box3">พระกริ่ง</label>
-				      				</div>
-				      				<div class='col s3'>
-				      					<input type="checkbox" name="amulet_category[]" class="filled-in" id="filled-in-box4" />
-				      					<label for="filled-in-box4">พระหล่อ</label>
-				      				</div>      		      				
-				      			</div>
+				      			<?php $i = 0; ?>
+				      			@foreach($category_list as $category)
+				      				@if($i%4==0)
+				      					<div class='row'>
+				      				@endif
+				      					<div class='col s3'>
+					      					<input type="checkbox" name="amulet_category[]" value="{{ $category['CATEGORY_ID'] }}" class="filled-in" id="{{ $category['CATEGORY_ID'] }}" />
+					      					<label for="{{ $category['CATEGORY_ID'] }}">{{ $category['CATEGORY_NAME'] }}</label>
+					      				</div>
+				      				<?php $i++; ?>
+				      				@if($i==count($category_list))
+				      					</div>
+				      				@endif
+				      				@if($i%4==0)
+				      					</div>
+				      				@endif
+				      			@endforeach
+				      		
 				      		</div>
 				      	</div>
 				      	<div class='row add-image'>

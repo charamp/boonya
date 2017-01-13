@@ -20,7 +20,8 @@ class AdminController extends Controller
 	}
     public function AddAmuletPage() {
     	$page = 'admin';
-    	return View::make('admin.addamulet')->with('page', $page);;
+        $category_list = CategoryList::all();
+    	return View::make('admin.addamulet')->with('page', $page)->with('category_list', $category_list);
     }
     public function AmuletListPage() {
     	$page = 'admin';
@@ -45,7 +46,7 @@ class AdminController extends Controller
     	    	$random_number = (string)rand(pow(10, 2), pow(10, 3)-1);
     	    	$image_name = $random_number . time().'.'.$request->amulet_image[$i]->getClientOriginalExtension();
             	$request->amulet_image[$i]->move(public_path('images'), $image_name);
-                Array_push($image_list, $image_name);
+                Array_push($image_list, Array($image_name, $i));
             }
 	    }
 
@@ -62,10 +63,18 @@ class AdminController extends Controller
 
         foreach($image_list as $image_name) {
             $image = new AmuletImage();
-            $image['image_id'] = 'IID-' . explode('.', $image_name)[0];
-            $image['image_url'] = $image_name;
+            $image['image_id'] = 'IID-' . explode('.', $image_name[0])[0];
+            $image['image_url'] = $image_name[0];
+            $image['image_order'] =$image_name[1];
             $image['amulet_id'] = $amulet_id;
             $image->save();
+        }
+
+        foreach($request['amulet_category'] as $category) {
+            $amulet_category = new AmuletCategory();
+            $amulet_category['amulet_id'] = $amulet_id;
+            $amulet_category['category_id'] = $category;
+            $amulet_category->save();
         }
 
 
